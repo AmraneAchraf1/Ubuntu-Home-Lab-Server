@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none">
+  <!-- Ubuntu circle background -->
+  <circle cx="64" cy="64" r="60" fill="#E95420"/>
+  <!-- Server rack representation -->
+  <rect x="32" y="28" width="64" height="72" rx="4" fill="white" opacity="0.2"/>
+  <!-- Server slots -->
+  <rect x="38" y="36" width="52" height="8" rx="2" fill="white"/>
+  <rect x="38" y="50" width="52" height="8" rx="2" fill="white"/>
+  <rect x="38" y="64" width="52" height="8" rx="2" fill="white"/>
+  <rect x="38" y="78" width="52" height="8" rx="2" fill="white"/>
+  <!-- Ubuntu logo accent -->
+  <circle cx="64" cy="64" r="20" fill="#E95420" stroke="white" stroke-width="3"/>
+  <!-- Three dots -->
+  <circle cx="56" cy="64" r="2.5" fill="white"/>
+  <circle cx="64" cy="64" r="2.5" fill="white"/>
+  <circle cx="72" cy="64" r="2.5" fill="white"/>
+  <!-- Home icon inside circle -->
+  <path d="M64 52 L56 60 L60 60 L60 68 L68 68 L68 60 L72 60 Z" fill="white"/>
+</svg>

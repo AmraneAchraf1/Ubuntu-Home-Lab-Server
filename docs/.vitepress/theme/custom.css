@@ -1,0 +1,375 @@
+/* Custom CSS for Ubuntu Home Lab Server Documentation */
+
+/* Copy code button */
+.has-copy-btn {
+  position: relative;
+}
+
+.copy-code-btn {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 6px;
+  background: var(--vp-code-block-bg);
+  color: var(--vp-code-copy-code-color, var(--vp-c-text-2));
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.2s, background 0.2s, color 0.2s;
+  z-index: 10;
+}
+
+.has-copy-btn:hover .copy-code-btn {
+  opacity: 1;
+}
+
+.copy-code-btn:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand);
+}
+
+.copy-code-btn.copied {
+  color: var(--vp-c-green);
+}
+
+.copy-code-btn:focus-visible {
+  outline: 2px solid var(--vp-c-brand);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+/* Dark mode adjustments */
+.dark .copy-code-btn {
+  background: var(--vp-code-block-bg);
+  color: var(--vp-code-copy-code-color, var(--vp-c-text-2));
+}
+
+.dark .copy-code-btn:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand);
+}
+
+/* Improve code block spacing with copy button */
+.has-copy-btn .copy-code-btn + code,
+.has-copy-btn .copy-code-btn + div > code {
+  padding-top: 2.5rem;
+}
+
+/* Better table styling */
+.vp-doc table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+}
+
+.vp-doc th,
+.vp-doc td {
+  border: 1px solid var(--vp-c-divider);
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.vp-doc th {
+  background: var(--vp-c-bg-soft);
+  font-weight: 600;
+}
+
+.vp-doc tr:nth-child(even) td {
+  background: var(--vp-c-bg-alt);
+}
+
+.dark .vp-doc tr:nth-child(even) td {
+  background: var(--vp-c-bg-soft);
+}
+
+/* Improve callout/admonition styling */
+.vp-doc .custom-block {
+  border-radius: 8px;
+  border-left-width: 4px;
+  margin: 1.5rem 0;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.dark .vp-doc .custom-block {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.vp-doc .custom-block.tip {
+  border-left-color: var(--vp-c-brand);
+  background: linear-gradient(90deg, var(--vp-c-brand-soft) 0%, transparent 100%);
+}
+
+.vp-doc .custom-block.warning {
+  border-left-color: var(--vp-c-yellow);
+  background: linear-gradient(90deg, rgba(230, 180, 0, 0.15) 0%, transparent 100%);
+}
+
+.vp-doc .custom-block.danger {
+  border-left-color: var(--vp-c-red);
+  background: linear-gradient(90deg, rgba(220, 50, 50, 0.15) 0%, transparent 100%);
+}
+
+.vp-doc .custom-block.info {
+  border-left-color: var(--vp-c-blue);
+  background: linear-gradient(90deg, rgba(50, 150, 220, 0.15) 0%, transparent 100%);
+}
+
+.vp-doc .custom-block.details {
+  border-left-color: var(--vp-c-indigo);
+  background: linear-gradient(90deg, rgba(80, 80, 200, 0.15) 0%, transparent 100%);
+}
+
+.vp-doc .custom-block p:first-child {
+  margin-top: 0;
+}
+
+.vp-doc .custom-block p:last-child {
+  margin-bottom: 0;
+}
+
+/* Custom block title styling */
+.vp-doc .custom-block > .custom-block-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.vp-doc .custom-block.tip > .custom-block-title::before {
+  content: '💡';
+}
+
+.vp-doc .custom-block.warning > .custom-block-title::before {
+  content: '⚠️';
+}
+
+.vp-doc .custom-block.danger > .custom-block-title::before {
+  content: '🚨';
+}
+
+.vp-doc .custom-block.info > .custom-block-title::before {
+  content: 'ℹ️';
+}
+
+.vp-doc .custom-block.details > .custom-block-title::before {
+  content: '📝';
+}
+
+/* Improve heading anchors */
+.vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 {
+  scroll-margin-top: 80px;
+}
+
+/* Better link styling in prose */
+.vp-doc a {
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.vp-doc a:hover {
+  border-bottom-color: currentColor;
+}
+
+/* Improve inline code */
+.vp-doc :not(pre) > code {
+  background: var(--vp-c-bg-soft);
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-weight: 500;
+  border: 1px solid var(--vp-c-divider);
+}
+
+.dark .vp-doc :not(pre) > code {
+  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-divider);
+}
+
+/* Improve kbd styling */
+.vp-doc kbd {
+  display: inline-block;
+  padding: 0.15rem 0.5rem;
+  font-family: var(--vp-font-family-mono);
+  font-size: 0.8rem;
+  line-height: 1.2;
+  background: var(--vp-c-bg-soft);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 4px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.dark .vp-doc kbd {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* Better horizontal rule */
+.vp-doc hr {
+  border: none;
+  border-top: 1px solid var(--vp-c-divider);
+  margin: 2.5rem 0;
+}
+
+/* Improve blockquote */
+.vp-doc blockquote {
+  border-left: 4px solid var(--vp-c-brand);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  color: var(--vp-c-text-2);
+  font-style: italic;
+  background: var(--vp-c-brand-soft);
+  border-radius: 0 8px 8px 0;
+  padding: 1rem 1.5rem;
+}
+
+.vp-doc blockquote p:first-child {
+  margin-top: 0;
+}
+
+.vp-doc blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+/* Image styling */
+.vp-doc img {
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  max-width: 100%;
+  height: auto;
+}
+
+.dark .vp-doc img {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* TOC / Outline improvements */
+.vp-outline {
+  min-width: 200px;
+}
+
+.vp-outline .outline-link {
+  font-size: 0.875rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.15s, color 0.15s;
+}
+
+.vp-outline .outline-link:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-brand);
+}
+
+.vp-outline .outline-link.active {
+  color: var(--vp-c-brand);
+  font-weight: 500;
+}
+
+/* Sidebar improvements */
+.vp-sidebar .vp-sidebar-group {
+  margin-bottom: 0.5rem;
+}
+
+.vp-sidebar .vp-sidebar-group .collapsible {
+  font-weight: 500;
+}
+
+.vp-sidebar .vp-sidebar-item {
+  border-radius: 6px;
+  margin: 0.125rem 0.25rem;
+  transition: background 0.15s, color 0.15s;
+}
+
+.vp-sidebar .vp-sidebar-item:hover {
+  background: var(--vp-c-bg-soft);
+}
+
+.vp-sidebar .vp-sidebar-item.active {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand);
+  font-weight: 500;
+}
+
+/* Search modal improvements */
+.vp-search-modal {
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.dark .vp-search-modal {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.vp-search-modal .input {
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+}
+
+/* Footer improvements */
+.vp-footer {
+  border-top: 1px solid var(--vp-c-divider);
+  padding: 2rem 1.5rem;
+}
+
+/* Mobile menu improvements */
+@media (max-width: 960px) {
+  .vp-sidebar {
+    width: 100%;
+    max-width: 320px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .copy-code-btn,
+  .vp-nav,
+  .vp-sidebar,
+  .vp-search-modal,
+  .vp-doc .custom-block-title::before {
+    display: none !important;
+  }
+  
+  .vp-doc {
+    max-width: none;
+  }
+  
+  .vp-doc pre {
+    page-break-inside: avoid;
+  }
+  
+  .vp-doc h1, .vp-doc h2, .vp-doc h3, .vp-doc h4 {
+    page-break-after: avoid;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Focus visible for accessibility */
+:focus-visible {
+  outline: 2px solid var(--vp-c-brand);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "name": "ubuntu-home-lab-server",
+  "version": "1.0.0",
+  "description": "[ubuntu_homelab_complete_guide.md](https://github.com/user-attachments/files/28021783/ubuntu_homelab_complete_guide.md) # 🖥️ Ubuntu Home Lab Server — Complete Setup Guide ### For Full-Stack Engineers (TypeScript · NestJS · React · React Native) **Hardware:** Intel i5 7th Gen · GTX 1050 Ti 2GB · 500GB Samsung NVMe · 500GB WD HDD · 16GB RAM",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AmraneAchraf1/Ubuntu-Home-Lab-Server.git"
+  },
+  "keywords": [],
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/AmraneAchraf1/Ubuntu-Home-Lab-Server/issues"
+  },
+  "homepage": "https://github.com/AmraneAchraf1/Ubuntu-Home-Lab-Server#readme",
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
