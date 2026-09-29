@@ -160,6 +160,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 21.1` (inline SVG) | Authored in-repo | — | — | session/window/pane hierarchy. |
 | `Figure 21.2` (Mermaid) | Authored in-repo | — | — | detach/reattach survival. |
 
+## 22-git-workflow-on-the-server
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 22.1` (inline SVG) | Authored in-repo | — | — | push-to-deploy topology. |
+| `Figure 22.2` (Mermaid) | Authored in-repo | — | — | deploy sequence. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
