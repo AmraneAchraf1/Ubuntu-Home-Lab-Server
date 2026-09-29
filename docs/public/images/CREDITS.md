@@ -195,6 +195,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 26.1` (Mermaid) | Authored in-repo | — | — | Diagnostic tree. |
 | `Figure 26.2` (inline SVG) | Authored in-repo | — | — | Diagnostic layers. |
 
+## 27-cheatsheet-quick-reference
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 27.1` (Mermaid) | Authored in-repo | — | — | Cheatsheet categories. |
+| `Figure 27.2` (inline SVG) | Authored in-repo | — | — | Illustrative health.sh output. No real data. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
