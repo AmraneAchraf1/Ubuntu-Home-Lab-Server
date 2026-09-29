@@ -174,6 +174,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 23.1` (Mermaid) | Authored in-repo | — | — | Secret flow. |
 | `Figure 23.2` (inline SVG) | Authored in-repo | — | — | git-ignored vs committed files. |
 
+## 24-log-management
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 24.1` (inline SVG) | Authored in-repo | — | — | /var/log map. |
+| `Figure 24.2` (Mermaid) | Authored in-repo | — | — | logrotate cycle. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
