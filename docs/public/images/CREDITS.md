@@ -125,6 +125,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 16.1` (Mermaid) | Authored in-repo | — | — | Cluster mode + shared state. |
 | `Figure 16.2` (inline SVG) | Authored in-repo | — | — | reload vs restart downtime. |
 
+## 17-monitoring-observability
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 17.1` (Mermaid) | Authored in-repo | — | — | Observability layers. |
+| `Figure 17.2` (Mermaid) | Authored in-repo | — | — | Disk-alert loop. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
