@@ -97,6 +97,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 12.1` (Mermaid) | Authored in-repo | — | — | GPU software stack. |
 | `Figure 12.2` (inline SVG) | Authored in-repo | — | — | 2 GB VRAM budget. |
 
+## 13-nodejs-nestjs-deployment
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 13.1` (Mermaid) | Authored in-repo | — | — | Deploy pipeline. |
+| `Figure 13.2` (Mermaid) | Authored in-repo | — | — | PM2 supervision loop. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
