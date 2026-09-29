@@ -60,6 +60,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 7.2` (Mermaid) | Authored in-repo | — | — | fdisk sequence. |
 | `Figure 7.3` (Mermaid) | Authored in-repo | — | — | fstab / nofail boot decision. |
 
+## 08-users-permissions-security-basics
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 8.1` (Mermaid) | Authored in-repo | — | — | User → groups → permissions. |
+| `Figure 8.2` (inline SVG) | Authored in-repo | — | — | Least-privilege blast radius. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
