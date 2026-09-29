@@ -258,14 +258,17 @@ export default defineConfig({
 
     footer: {
       message: 'Released under the <a href="https://github.com/Ubuntu-HL/Ubuntu-Home-Lab-Server/blob/main/LICENSE">MIT License</a>.',
-      copyright: 'Copyright © 2026-present <a href="https://github.com/AmraneAchraf1">Achraf Amrane</a>',
+      copyright: 'Copyright © 2026-present Ubuntu Home Lab Server',
     },
 
-    carbonAds: {
-      code: '',
-      placement: '',
-      format: 'classic',
-    },
+    // TODO: carbonAds is intentionally disabled. VitePress renders a Carbon Ads
+    // slot when a non-empty `code`/`placement` is provided. Leave commented out
+    // until we have a real Carbon Ads account, otherwise an empty slot ships.
+    // carbonAds: {
+    //   code: '',
+    //   placement: '',
+    //   format: 'classic',
+    // },
   },
 
   transformPageData(pageData) {

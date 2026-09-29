@@ -1,3 +1,8 @@
+> **📖 The canonical documentation is the VitePress site under [`docs/`](docs/).**
+> It has the full chapter structure, diagrams, search, and dark mode.
+> Run `npm run docs:dev` to preview locally, or browse [`docs/chapters/`](docs/chapters/).
+> This README is a legacy mirror and will be slimmed down to a short pointer at the end of the documentation project.
+
 [ubuntu_homelab_complete_guide.md](https://github.com/user-attachments/files/28021783/ubuntu_homelab_complete_guide.md)
 # 🖥️ Ubuntu Home Lab Server — Complete Setup Guide
 ### For Full-Stack Engineers (TypeScript · NestJS · React · React Native)

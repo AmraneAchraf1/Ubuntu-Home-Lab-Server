@@ -1,7 +1,7 @@
 {
   "name": "ubuntu-home-lab-server",
   "version": "1.0.0",
-  "description": "[ubuntu_homelab_complete_guide.md](https://github.com/user-attachments/files/28021783/ubuntu_homelab_complete_guide.md) # 🖥️ Ubuntu Home Lab Server — Complete Setup Guide ### For Full-Stack Engineers (TypeScript · NestJS · React · React Native) **Hardware:** Intel i5 7th Gen · GTX 1050 Ti 2GB · 500GB Samsung NVMe · 500GB WD HDD · 16GB RAM",
+  "description": "Complete setup guide for an Ubuntu 24.04 home lab server — Docker, Nginx, NVIDIA/CUDA, Node/NestJS, PostgreSQL, and more.",
   "main": "index.js",
   "directories": {
     "doc": "docs"
@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AmraneAchraf1/Ubuntu-Home-Lab-Server.git"
+    "url": "git+https://github.com/Ubuntu-HL/Ubuntu-Home-Lab-Server.git"
   },
   "keywords": [],
   "type": "commonjs",
   "bugs": {
-    "url": "https://github.com/AmraneAchraf1/Ubuntu-Home-Lab-Server/issues"
+    "url": "https://github.com/Ubuntu-HL/Ubuntu-Home-Lab-Server/issues"
   },
-  "homepage": "https://github.com/AmraneAchraf1/Ubuntu-Home-Lab-Server#readme",
+  "homepage": "https://github.com/Ubuntu-HL/Ubuntu-Home-Lab-Server#readme",
   "devDependencies": {
     "vitepress": "^1.6.4"
   }
