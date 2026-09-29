@@ -118,6 +118,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 15.1` (Mermaid) | Authored in-repo | — | — | Two-stage pipeline flow. |
 | `Figure 15.2` (inline SVG) | Authored in-repo | — | — | Data-size funnel (illustrative). |
 
+## 16-process-management-with-pm2
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 16.1` (Mermaid) | Authored in-repo | — | — | Cluster mode + shared state. |
+| `Figure 16.2` (inline SVG) | Authored in-repo | — | — | reload vs restart downtime. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
