@@ -75,6 +75,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 9.2` (inline SVG) | Authored in-repo | — | — | Public vs LAN-only port exposure. |
 | `Figure 9.3` (Mermaid) | Authored in-repo | — | — | Fail2ban ban flow. |
 
+## 10-docker-containers-explained
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 10.1` (Mermaid) | Authored in-repo | — | — | Image/container/volume model. |
+| `Figure 10.2` (Mermaid) | Authored in-repo | — | — | Compose stack topology. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.

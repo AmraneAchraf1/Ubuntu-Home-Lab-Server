@@ -1,23 +1,50 @@
 ---
 title: "Docker — Containers Explained"
 order: 10
-description: "Docker concepts (images, containers, volumes, networks), installation with official repo, daemon configuration with log limits, and complete dev stack with docker-compose."
+description: "Docker concepts (images, containers, volumes, networks), installation with the official repo, daemon configuration with log limits, and a complete dev stack with docker-compose."
+difficulty: Intermediate
+estimatedTime: 40 min
+prerequisites:
+  - "A patched server with the firewall configured (Chapter 9)"
+  - "/var on its own partition (Chapter 2) — Docker data lives there"
+  - "sudo access"
 ---
-## What is Docker and Why Use It?
+
+<ChapterMeta />
+
+## TL;DR
+
+- **A container is an isolated process** with its own filesystem and dependencies, sharing the host kernel — a lightweight VM without the overhead.
+- **Image = template, container = running instance, volume = persistent data, network = container-to-container wiring.**
+- **Install Docker from the official repo**, add yourself to the `docker` group, then verify with `docker run hello-world`.
+- **Cap container logs in `daemon.json`** — otherwise a chatty container fills `/var` and takes the server down.
+- **`docker compose up -d` starts your whole stack** (Postgres, Redis, pgAdmin, Adminer) with one command.
+
+## Prerequisites
+
+| Requirement | Why |
+|-------------|-----|
+| Patched, firewalled server | The stack will bind ports you've scoped in Chapter 9. |
+| `/var` partition (Chapter 2) | Docker stores images/volumes in `/var/lib/docker`. |
+| `sudo` | Installing Docker and editing the daemon config. |
+
+## What is Docker and why use it?
 
 Without Docker, installing a Node.js app with Postgres on a server means:
+
 1. Install Node.js (conflicts with system Node?)
 2. Install Postgres (configure it, set passwords, create users)
 3. Handle environment differences (dev vs prod)
 4. App works on your Mac but not the server due to different OS versions
 
 With Docker:
+
 - Each service runs in its own **container** — isolated, with its own dependencies
 - A container is like a lightweight VM but shares the kernel
 - "It works on my machine" becomes "it works in the container, everywhere"
 - Start your entire stack with one command: `docker compose up`
 
-## Core Docker Concepts
+## Core Docker concepts
 
 **Image** — A read-only template. `postgres:15` is an image. Like a class in OOP.
 
@@ -27,9 +54,28 @@ With Docker:
 
 **Network** — Docker creates virtual networks so containers can communicate. By default, containers in the same `docker-compose.yml` can reach each other by service name.
 
-## Install Docker
+```mermaid
+flowchart LR
+  IMG[Image: postgres:15-alpine] -->|docker run| C1[Container A]
+  IMG -->|docker run| C2[Container B]
+  C1 --- V[(Volume: pgdata)]
+  C2 -.-> V
+```
 
-```bash
+<p class="ahl-diagram-caption"><strong>Figure 10.1</strong> — One immutable image, many disposable containers; volumes outlive the containers that use them.</p>
+
+| Concept | Analogy | Lifetime |
+|---------|---------|----------|
+| Image | Class | Permanent (until pruned) |
+| Container | Object / instance | Ephemeral |
+| Volume | External drive | Until deleted |
+| Network | Private LAN | Until removed |
+
+## Step 1 — Install Docker
+
+**Run** the block below. **Expected:** `docker run hello-world` prints "Hello from Docker!".
+
+```bash [install-docker.sh]
 # Remove old/conflicting packages
 sudo apt remove -y docker docker-engine docker.io containerd runc 2>/dev/null
 
@@ -64,16 +110,17 @@ docker --version
 docker compose version
 ```
 
-## Configure Docker Storage Location
+## Step 2 — Configure Docker storage and logs
 
 By default, Docker stores everything in `/var/lib/docker`. Since we gave `/var` its own 50GB partition, this is good — Docker data won't overflow into your root partition.
 
 Configure Docker daemon with best practices:
-```bash
+
+```bash [daemon-config.sh]
 sudo nano /etc/docker/daemon.json
 ```
 
-```json
+```json [daemon.json]
 {
   "log-driver": "json-file",
   "log-opts": {
@@ -84,23 +131,24 @@ sudo nano /etc/docker/daemon.json
 }
 ```
 
-::: info
-**Why log limits?** Without limits, Docker container logs can grow indefinitely and fill your disk. `max-size: 10m` means each log file is max 10MB, and `max-file: 3` means only 3 rotated files are kept. Max 30MB per container.
+::: info Why log limits?
+Without limits, Docker container logs can grow indefinitely and fill your disk. `max-size: 10m` means each log file is max 10MB, and `max-file: 3` means only 3 rotated files are kept. Max 30MB per container.
 :::
 
-```bash
+```bash [restart-docker.sh]
 sudo systemctl restart docker
 ```
 
-## Your Development Stack with Docker Compose
+## Step 3 — Your development stack with Docker Compose
 
-Create the directory structure:
-```bash
+**Run** the commands to create the directory, then paste the compose file. **Expected:** `docker compose ps` lists four running services.
+
+```bash [stack-dir.sh]
 mkdir -p ~/docker/stack
 nano ~/docker/stack/docker-compose.yml
 ```
 
-```yaml
+```yaml [docker-compose.yml]
 version: '3.9'
 
 services:
@@ -166,7 +214,23 @@ volumes:
   pgadmindata:
 ```
 
-```bash
+```mermaid
+flowchart TD
+  subgraph net["compose network (default)"]
+    PG[(postgres:5432)]
+    RD[(redis:6379)]
+    PGA[pgadmin] -->|depends_on healthy| PG
+    AD[adminer] --> PG
+  end
+  Mac[Your Mac] -->|127.0.0.1:5050| PGA
+  Mac -->|127.0.0.1:8080| AD
+  Mac -->|SSH tunnel 5432| PG
+  Mac -->|SSH tunnel 6379| RD
+```
+
+<p class="ahl-diagram-caption"><strong>Figure 10.2</strong> — The stack: containers talk to each other by service name; you reach them from your Mac via localhost (or an SSH tunnel).</p>
+
+```bash [compose-control.sh]
 cd ~/docker/stack
 
 # Start everything
@@ -185,9 +249,9 @@ docker compose down
 docker compose down -v
 ```
 
-## Useful Docker Commands
+## Useful Docker commands
 
-```bash
+```bash [docker-commands.sh]
 # List running containers
 docker ps
 
@@ -217,3 +281,54 @@ docker image prune
 
 # Full cleanup (careful! removes everything unused)
 docker system prune -a
+```
+
+## Verification
+
+| Check | Command | Expected |
+|-------|---------|----------|
+| Docker works without sudo | `docker ps` | a header row, no permission error |
+| Compose installed | `docker compose version` | `Docker Compose version v2.x` |
+| Stack is up | `docker compose ps` | 4 services `Up`/`running` |
+| Storage driver | `docker info \| grep "Storage Driver"` | `overlay2` |
+| Log limits applied | `docker inspect postgres \| grep -i max-size` | shows `"max-size": "10m"` |
+
+```bash [verify.sh]
+docker run --rm hello-world
+cd ~/docker/stack && docker compose ps
+docker info | grep -E "Storage Driver|Logging Driver"
+```
+
+## Common pitfalls
+
+::: warning Top 3 failure modes
+1. **`docker: permission denied`.** You added yourself to the `docker` group but your session predates it. Run `newgrp docker` or log out and back in.
+2. **Publishing ports as `"5432:5432"`.** That binds `0.0.0.0` and exposes the DB to the LAN. Use `"127.0.0.1:5432:5432"`.
+3. **No log limits.** A crash-looping container writes gigabytes of logs and fills `/var`. Always set `max-size`/`max-file`.
+:::
+
+## Troubleshooting
+
+| Symptom | Likely cause | Fix |
+|---------|--------------|-----|
+| `Cannot connect to the Docker daemon` | Service stopped, or not in `docker` group | `sudo systemctl start docker`; `newgrp docker` |
+| Port already in use | Another service holds the port | `ss -tlnp \| grep <port>`; change the host port mapping |
+| Container exits immediately | Bad command/env in compose | `docker compose logs <svc>` |
+| Data lost after `down` | Used `down -v` | Volumes are deleted by `-v`; use plain `down` |
+| Pulls are slow / fail | Registry rate limit or DNS | Check `resolvectl status`; retry |
+
+## Recap & next
+
+You can install Docker, cap its footprint, and bring up a four-service stack with one command. Containers now isolate every dependency, and volumes keep your data across restarts.
+
+Next: **[Chapter 11 — Nginx: Reverse Proxy & SSL](/chapters/11-nginx-reverse-proxy-ssl)** — put a single, TLS-terminating front door in front of these services.
+
+## References
+
+- [Install Docker Engine on Ubuntu](https://docs.docker.com/engine/install/ubuntu/) — the official install steps.
+- [Docker Compose overview](https://docs.docker.com/compose/) — the file format and commands.
+- [What is a container?](https://docs.docker.com/get-started/docker-concepts/the-basics/what-is-a-container/) — concepts refresher.
+- [dockerd daemon configuration](https://docs.docker.com/reference/cli/dockerd/) — `daemon.json` options.
+- [Configure logging drivers](https://docs.docker.com/engine/logging/configure/) — log rotation with `max-size`/`max-file`.
+- [Dockerfile reference](https://docs.docker.com/engine/reference/builder/) — for when you build your own images.
+- [PostgreSQL on Docker Hub](https://hub.docker.com/_/postgres) — image tags and environment variables.
