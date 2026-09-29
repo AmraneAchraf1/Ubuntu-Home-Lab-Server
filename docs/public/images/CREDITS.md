@@ -20,6 +20,14 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 2.3` (Mermaid) | Authored in-repo | — | — | Installer "Add GPT Partition" loop. |
 | `Figure 2.4` (inline SVG) | Authored in-repo | — | — | Annotated recreation of the installer storage screen. No redistributable upstream screenshot found; recreated for accuracy and theme control. No secrets. |
 
+## 03-first-boot-essential-setup
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 3.1` (Mermaid) | Authored in-repo | — | — | Linux boot chain. |
+| `Figure 3.2` (inline SVG) | Authored in-repo | — | — | Recreated terminal for the first login. No secrets (example username only). |
+| `Figure 3.3` (Mermaid) | Authored in-repo | — | — | Lid-switch decision. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
