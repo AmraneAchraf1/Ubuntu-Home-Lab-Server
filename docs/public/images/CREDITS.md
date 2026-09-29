@@ -44,6 +44,14 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 5.2` (Mermaid) | Authored in-repo | — | — | Key-auth challenge flow. |
 | `Figure 5.3` (inline SVG) | Authored in-repo | — | — | Local port-forwarding tunnel. No secrets. |
 
+## 06-networking-static-ip
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 6.1` (Mermaid) | Authored in-repo | — | — | DHCP lease vs static. |
+| `Figure 6.2` (inline SVG) | Authored in-repo | — | — | Home network topology. No real MACs/IPs beyond the guide's examples. |
+| `Figure 6.3` (Mermaid) | Authored in-repo | — | — | DNS resolution flow. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
