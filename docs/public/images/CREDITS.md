@@ -104,6 +104,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 13.1` (Mermaid) | Authored in-repo | — | — | Deploy pipeline. |
 | `Figure 13.2` (Mermaid) | Authored in-repo | — | — | PM2 supervision loop. |
 
+## 14-postgresql-database-management
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 14.1` (Mermaid) | Authored in-repo | — | — | Backup/restore cycle. |
+| `Figure 14.2` (inline SVG) | Authored in-repo | — | — | Connection pooling. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
