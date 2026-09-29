@@ -167,6 +167,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 22.1` (inline SVG) | Authored in-repo | — | — | push-to-deploy topology. |
 | `Figure 22.2` (Mermaid) | Authored in-repo | — | — | deploy sequence. |
 
+## 23-environment-variables-secrets-management
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 23.1` (Mermaid) | Authored in-repo | — | — | Secret flow. |
+| `Figure 23.2` (inline SVG) | Authored in-repo | — | — | git-ignored vs committed files. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
