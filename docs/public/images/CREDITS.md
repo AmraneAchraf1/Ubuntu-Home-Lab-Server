@@ -82,6 +82,14 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 10.1` (Mermaid) | Authored in-repo | — | — | Image/container/volume model. |
 | `Figure 10.2` (Mermaid) | Authored in-repo | — | — | Compose stack topology. |
 
+## 11-nginx-reverse-proxy-ssl
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 11.1` (Mermaid) | Authored in-repo | — | — | Domain-based routing. |
+| `Figure 11.2` (Mermaid) | Authored in-repo | — | — | Request flow browser→Nginx→app→DB. |
+| `Figure 11.3` (inline SVG) | Authored in-repo | — | — | SSL termination. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
