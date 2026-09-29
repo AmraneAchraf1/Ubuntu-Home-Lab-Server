@@ -90,6 +90,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 11.2` (Mermaid) | Authored in-repo | — | — | Request flow browser→Nginx→app→DB. |
 | `Figure 11.3` (inline SVG) | Authored in-repo | — | — | SSL termination. |
 
+## 12-nvidia-gpu-setup-for-ai-workloads
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 12.1` (Mermaid) | Authored in-repo | — | — | GPU software stack. |
+| `Figure 12.2` (inline SVG) | Authored in-repo | — | — | 2 GB VRAM budget. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
