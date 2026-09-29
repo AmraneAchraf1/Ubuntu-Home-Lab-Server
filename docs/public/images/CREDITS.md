@@ -28,6 +28,14 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 3.2` (inline SVG) | Authored in-repo | — | — | Recreated terminal for the first login. No secrets (example username only). |
 | `Figure 3.3` (Mermaid) | Authored in-repo | — | — | Lid-switch decision. |
 
+## 04-understanding-the-linux-filesystem
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 4.1` (Mermaid) | Authored in-repo | — | — | FHS directory map. |
+| `Figure 4.2` (Mermaid) | Authored in-repo | — | — | "Everything is a file" device flow. |
+| `Figure 4.3` (inline SVG) | Authored in-repo | — | — | Permission string breakdown. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
