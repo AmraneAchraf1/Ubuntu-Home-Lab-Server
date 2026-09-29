@@ -67,6 +67,14 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 8.1` (Mermaid) | Authored in-repo | — | — | User → groups → permissions. |
 | `Figure 8.2` (inline SVG) | Authored in-repo | — | — | Least-privilege blast radius. |
 
+## 09-firewall-network-security
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 9.1` (Mermaid) | Authored in-repo | — | — | UFW default posture. |
+| `Figure 9.2` (inline SVG) | Authored in-repo | — | — | Public vs LAN-only port exposure. |
+| `Figure 9.3` (Mermaid) | Authored in-repo | — | — | Fail2ban ban flow. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
