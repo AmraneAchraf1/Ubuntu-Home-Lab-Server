@@ -132,6 +132,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 17.1` (Mermaid) | Authored in-repo | — | — | Observability layers. |
 | `Figure 17.2` (Mermaid) | Authored in-repo | — | — | Disk-alert loop. |
 
+## 18-backup-strategy-disaster-recovery
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 18.1` (inline SVG) | Authored in-repo | — | — | 3-2-1 backup rule. |
+| `Figure 18.2` (Mermaid) | Authored in-repo | — | — | Backup script flow. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
