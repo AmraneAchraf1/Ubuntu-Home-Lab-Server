@@ -139,6 +139,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 18.1` (inline SVG) | Authored in-repo | — | — | 3-2-1 backup rule. |
 | `Figure 18.2` (Mermaid) | Authored in-repo | — | — | Backup script flow. |
 
+## 19-advanced-security-hardening
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 19.1` (Mermaid) | Authored in-repo | — | — | Defense-in-depth layers. |
+| `Figure 19.2` (inline SVG) | Authored in-repo | — | — | AIDE baseline vs check. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
