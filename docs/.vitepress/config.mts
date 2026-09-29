@@ -1,6 +1,9 @@
 import { defineConfig } from 'vitepress'
+import { withMermaid } from 'vitepress-plugin-mermaid'
+import { fileURLToPath, URL } from 'node:url'
 
-export default defineConfig({
+export default withMermaid(
+  defineConfig({
   title: 'Ubuntu Home Lab Server',
   description: 'Complete setup guide for Ubuntu-based home server with Node.js, NestJS, Docker, PostgreSQL, NVIDIA GPU, and more',
   lang: 'en-US',
@@ -30,26 +33,44 @@ export default defineConfig({
     lineNumbers: true,
     toc: { level: [2, 3] },
     config: (md) => {
-      // Add copy button to code blocks
-      md.use((md) => {
-        const fence = md.renderer.rules.fence
-        md.renderer.rules.fence = (...args) => {
-          const [tokens, idx] = args
-          const token = tokens[idx]
-          const rawCode = token.content
-          const lang = token.info.trim().split(/\s+/)[0]
-          const encoded = encodeURIComponent(rawCode)
-          const copyButton = `<button class="copy-code-btn" data-code="${encoded}" aria-label="Copy code" title="Copy to clipboard">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
-          </button>`
-          const html = fence?.(...args) || ''
-          return html.replace('<pre class="language-', `<pre class="language-${lang} has-copy-btn language-`)
-        }
-      })
+      // Optional filename label for fenced code blocks.
+      // Usage: ```bash [first-boot.sh]
+      // VitePress already wraps fences in `<div class="language-<lang>">` with a
+      // `.lang` badge and a native `.copy` button, so we only inject the title row.
+      const fence = md.renderer.rules.fence
+      md.renderer.rules.fence = (tokens, idx, options, env, self) => {
+        const token = tokens[idx]
+        const match = /\[([^\]]+)\]/.exec(token.info || '')
+        const title = match ? match[1].trim() : ''
+        if (title) token.info = token.info.replace(/\s*\[[^\]]+\]/, '')
+        const html = fence(tokens, idx, options, env, self)
+        if (!title) return html
+        return html.replace(
+          /(<div class="language-[^"]*"[^>]*>)/,
+          `$1<div class="vp-code-title">${md.utils.escapeHtml(title)}</div>`,
+        )
+      }
     },
   },
 
+  mermaid: {
+    // Rendered by docs/.vitepress/theme/Mermaid.vue, which maps these onto the
+    // site CSS design tokens for both light and dark mode.
+    theme: 'base',
+    securityLevel: 'loose',
+    startOnLoad: false,
+  },
+
   vite: {
+    resolve: {
+      alias: {
+        // Swap in our own Mermaid renderer so diagrams adopt the site's CSS
+        // variables (light + dark) instead of the plugin's forced `dark` theme.
+        'vitepress-plugin-mermaid/Mermaid.vue': fileURLToPath(
+          new URL('./theme/Mermaid.vue', import.meta.url),
+        ),
+      },
+    },
     css: {
       postcss: {},
     },
@@ -286,4 +307,5 @@ export default defineConfig({
       { property: 'og:description', content: pageData.description || 'Ubuntu Home Lab Server Guide' },
     ])
   },
-})
+  }),
+)
