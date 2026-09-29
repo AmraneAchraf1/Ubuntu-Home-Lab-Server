@@ -188,6 +188,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 25.1` (inline SVG) | Authored in-repo | — | — | Tuning areas. |
 | `Figure 25.2` (Mermaid) | Authored in-repo | — | — | Apply flow. |
 
+## 26-troubleshooting-guide
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 26.1` (Mermaid) | Authored in-repo | — | — | Diagnostic tree. |
+| `Figure 26.2` (inline SVG) | Authored in-repo | — | — | Diagnostic layers. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
