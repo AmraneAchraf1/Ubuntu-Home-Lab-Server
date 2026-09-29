@@ -153,6 +153,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 20.1` (inline SVG) | Authored in-repo | — | — | Cron field breakdown. |
 | `Figure 20.2` (Mermaid) | Authored in-repo | — | — | cron vs systemd timer. |
 
+## 21-tmux-terminal-multiplexer
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 21.1` (inline SVG) | Authored in-repo | — | — | session/window/pane hierarchy. |
+| `Figure 21.2` (Mermaid) | Authored in-repo | — | — | detach/reattach survival. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
