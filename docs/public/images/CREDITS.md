@@ -181,6 +181,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 24.1` (inline SVG) | Authored in-repo | — | — | /var/log map. |
 | `Figure 24.2` (Mermaid) | Authored in-repo | — | — | logrotate cycle. |
 
+## 25-performance-tuning
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 25.1` (inline SVG) | Authored in-repo | — | — | Tuning areas. |
+| `Figure 25.2` (Mermaid) | Authored in-repo | — | — | Apply flow. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
