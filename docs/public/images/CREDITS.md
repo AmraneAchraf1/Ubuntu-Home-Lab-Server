@@ -52,6 +52,14 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 6.2` (inline SVG) | Authored in-repo | — | — | Home network topology. No real MACs/IPs beyond the guide's examples. |
 | `Figure 6.3` (Mermaid) | Authored in-repo | — | — | DNS resolution flow. |
 
+## 07-disk-management-hdd-setup
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 7.1` (inline SVG) | Authored in-repo | — | — | Disk → partition → format → mount chain. |
+| `Figure 7.2` (Mermaid) | Authored in-repo | — | — | fdisk sequence. |
+| `Figure 7.3` (Mermaid) | Authored in-repo | — | — | fstab / nofail boot decision. |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
