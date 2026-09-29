@@ -331,21 +331,24 @@
 }
 
 /* --------------------------------------------------------------------------
-   6. Tables — zebra + sticky header + mobile scroll
+   6. Tables — zebra + borders + mobile scroll
+   NOTE: VitePress renders tables as `display:block; overflow-x:auto` so wide
+   tables scroll. We must NOT use `position:sticky` on the header: the table
+   itself is the scroll container, so a sticky <th> sticks inside it and
+   overlaps/cuts the first rows. Keep headers in normal flow instead.
    -------------------------------------------------------------------------- */
 .vp-doc table {
   display: block;
   width: 100%;
+  max-width: 100%;
   margin: 1.5rem 0;
   border-collapse: collapse;
   overflow-x: auto;
   font-size: 0.92rem;
+  -webkit-overflow-scrolling: touch;
 }
 
 .vp-doc thead th {
-  position: sticky;
-  top: var(--vp-nav-height, 64px);
-  z-index: 1;
   background: var(--vp-c-bg-soft);
   font-weight: 600;
 }
@@ -355,6 +358,7 @@
   border: 1px solid var(--vp-c-divider);
   padding: 0.65rem 0.9rem;
   text-align: left;
+  vertical-align: top;
 }
 
 .vp-doc tr:nth-child(even) td {
