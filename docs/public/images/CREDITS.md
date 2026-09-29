@@ -111,6 +111,13 @@ re-download them later. Authored diagrams (Mermaid/SVG) are noted as "authored i
 | `Figure 14.1` (Mermaid) | Authored in-repo | — | — | Backup/restore cycle. |
 | `Figure 14.2` (inline SVG) | Authored in-repo | — | — | Connection pooling. |
 
+## 15-openfoodfacts-data-pipeline
+
+| File | Type | Source | License / credit | Note |
+|------|------|--------|------------------|------|
+| `Figure 15.1` (Mermaid) | Authored in-repo | — | — | Two-stage pipeline flow. |
+| `Figure 15.2` (inline SVG) | Authored in-repo | — | — | Data-size funnel (illustrative). |
+
 ## Conventions
 
 - **Mermaid** diagrams live inline in the chapter `.md` and are themed from CSS tokens — no files stored here.
